@@ -14,32 +14,33 @@
     <link rel="stylesheet" href="css/style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!--Link js file -->
-    <script type="text/javascript" src="javascript/giphy.js"></script>
+
     <title>GifTastic</title>
 </head>
 
 <body>
     <div class="container">
         <!--Header section-->
-        <div class="jumbotron">
-            <h1 class="display-24">Insects</h1>
+        <div class="row">
+            <div class="col-md-12" id="header-row">
+                <h1 id="headerRow">Insects</h1>
+            </div>
         </div>
 
         <!--Button Area-->
         <div class="row">
-            <div class="col-md-12 dotted-border" id="button-area"></div>
+            <div class="col-md-12 " id="button-area"></div>
         </div>
 
         <!--Gif and Form area-->
         <div class="row">
-            <div class="col-md-9 dotted-border" id="image-area"></div>
+            <div class="col-md-9 border" id="image-area"></div>
 
-            <div class="col-md-3 dotted-border" id="form-area">
-           <form>
-                <input type="text" class="form-control" id="validationTooltip05" placeholder="Type here" required>
-                <button class="btn btn-primary" type="submit">Submit</button>
-           </form>     
+            <div class="col-md-3" id="form-area">
+                <form>
+                    <input type="text" class="form-control" id="validationTooltip05" placeholder="Type here" required>
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </form>
             </div>
         </div>
 
@@ -48,7 +49,8 @@
 
 
 
-
+    <!--Link js file -->
+    <script type="text/javascript" src="javascript/giphy.js"></script>
 </body>
 
 </html>
