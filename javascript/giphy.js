@@ -3,6 +3,7 @@ $(document).ready(function () {
     var input = $("#input");
     var submit = $("#submit");
     var imageArea = $("#image-area");
+    var btnArea = $("#button-area");
 
     //Declare variable to hold array of topics
     var topics = ["Bristletails", "Antlion", "Zygentoma", "Caddisflies", "Dobsonflies", "Scale Insect", "Net-winged Insects", "Booklice", "Orthoptera", "Pteryota", "Odonata", "Caelifera"];
@@ -12,9 +13,15 @@ $(document).ready(function () {
     submit.on("click", function (event) {
 
         event.preventDefault();
+        btnArea.empty();
         inputValue = document.getElementById('input').value;
         topics.push(inputValue);  
         console.log(topics);
+
+        //Empty Input Area
+        
+        
+        createBtns(inputValue);
         
     })
 
