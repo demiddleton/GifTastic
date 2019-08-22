@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    
+
     <!--Insert Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
@@ -20,10 +20,31 @@
 </head>
 
 <body>
+    <div class="container">
+        <!--Header section-->
+        <div class="jumbotron">
+            <h1 class="display-24">Insects</h1>
+        </div>
 
-    <div id="button-area"></div>
-    <div id="image-area"></div>
+        <!--Button Area-->
+        <div class="row">
+            <div class="col-md-12 dotted-border" id="button-area"></div>
+        </div>
 
+        <!--Gif and Form area-->
+        <div class="row">
+            <div class="col-md-9 dotted-border" id="image-area"></div>
+
+            <div class="col-md-3 dotted-border" id="form-area">
+           <form>
+                <input type="text" class="form-control" id="validationTooltip05" placeholder="Type here" required>
+                <button class="btn btn-primary" type="submit">Submit</button>
+           </form>     
+            </div>
+        </div>
+
+
+    </div>
 
 
 
