@@ -5,8 +5,6 @@ $(document).ready(function () {
     var imageArea = $("#image-area");
     var btnArea = $("#button-area");
 
-    var apiKey = "EszsuuswazSR3Ju6qajA3q6Ro9AV9C0p";
-
     //Declare variable to hold array of topics
     var topics = ["Bristletails", "Antlion", "Zygentoma", "Caddisflies", "Dobsonflies", "Scale Insect", "Net-winged Insects", "Booklice", "Orthoptera", "Pteryota", "Odonata", "Caelifera"];
 
@@ -16,16 +14,13 @@ $(document).ready(function () {
 
         event.preventDefault();
         btnArea.empty();
-        
+
         inputValue = document.getElementById('input').value;
         topics.push(inputValue);
         console.log(topics);
 
         //Create button for new input value
         createBtns(inputValue);
-
-        //Empty input box
-       
 
     })
 
@@ -45,11 +40,27 @@ $(document).ready(function () {
     createBtns();
 
     //Create a button click function to display 10 non-animated gifs and place them on the page
-    button.on("click", function (event) {
+    $("button").on("click", function () {
 
-        imageArea.empty();
+        // In this case, the "this" keyword refers to the button that was clicked
+        var insect = $(this).attr("data-name");
+        console.log(insect);
 
+        // Constructing a URL to search Giphy for the name of the insect
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + insect + "&api_key=EszsuuswazSR3Ju6qajA3q6Ro9AV9C0p&limit=10";
+
+        // Performing our AJAX GET request
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(queryURL);
+
+            //Display response on the page
+        })
+
+    })
     //Create click function to animate the gif when the image is clicked
 
 
-});
+})
