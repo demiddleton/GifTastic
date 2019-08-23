@@ -1,10 +1,9 @@
 body {
     background-image: url(https://media.istockphoto.com/vectors/cartoon-small-insect-with-nature-background-vector-id636842942?k=6&m=636842942&s=612x612&w=0&h=cblTWJsIP6ZfJz8JO1bwNkX08PEo2QWJGjcOTFAXSRw=);
     background-repeat: no-repeat;
-    background-size: 100%;   
-      
-    
-}
+    background-size: 100%;  
+            
+    }
 
 #header-row {
     height: 100px;
@@ -17,4 +16,9 @@ body {
 
 #button-area {
     margin-bottom: 40px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
 }

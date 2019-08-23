@@ -5,6 +5,8 @@ $(document).ready(function () {
     var imageArea = $("#image-area");
     var btnArea = $("#button-area");
 
+    var apiKey = "EszsuuswazSR3Ju6qajA3q6Ro9AV9C0p";
+
     //Declare variable to hold array of topics
     var topics = ["Bristletails", "Antlion", "Zygentoma", "Caddisflies", "Dobsonflies", "Scale Insect", "Net-winged Insects", "Booklice", "Orthoptera", "Pteryota", "Odonata", "Caelifera"];
 
@@ -14,15 +16,17 @@ $(document).ready(function () {
 
         event.preventDefault();
         btnArea.empty();
+        
         inputValue = document.getElementById('input').value;
-        topics.push(inputValue);  
+        topics.push(inputValue);
         console.log(topics);
 
-        //Empty Input Area
-        
-        
+        //Create button for new input value
         createBtns(inputValue);
-        
+
+        //Empty input box
+       
+
     })
 
 
@@ -31,19 +35,19 @@ $(document).ready(function () {
     function createBtns() {
 
         for (var i = 0; i < topics.length; i++) {
-            var buttons = $("<button>").text(topics[i]);
-            buttons.attr("data-name", topics[i])
-            $("#button-area").append(buttons);
-            console.log(buttons);
+            var button = $("<button>").text(topics[i]);
+            button.attr("data-name", topics[i])
+            $("#button-area").append(button);
+            console.log(button);
         }
 
     }
     createBtns();
 
-
-
-
     //Create a button click function to display 10 non-animated gifs and place them on the page
+    button.on("click", function (event) {
+
+        imageArea.empty();
 
     //Create click function to animate the gif when the image is clicked
 
