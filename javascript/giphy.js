@@ -6,8 +6,7 @@ $(document).ready(function () {
     var btnArea = $("#button-area");
 
     //Declare variable to hold array of topics
-    var topics = ["Bristletails", "Antlion", "Zygentoma", "Caddisflies", "Dobsonflies", "Scale Insect", "Net-winged Insects", "Booklice", "Orthoptera", "Pteryota", "Odonata", "Caelifera"];
-
+    var topics = ["Pulp Fiction", "Lion King", "The Matrix", "Titantic", "Home Alone", "Forrest Gump", "Mrs. Doubtfire", "Aladdin", "Braveheart", "Waynes World", "Terminator 2"];
     //Create function to get user input and push it to the topics array
 
     submit.on("click", function (event) {
@@ -40,12 +39,15 @@ $(document).ready(function () {
     //Create a button click function to display 10 non-animated gifs and place them on the page
     $("button").on("click", function () {
         imageArea.empty();
-        // "this" keyword refers to the button that was clicked
-        var insect = $(this).attr("data-name");
-        console.log(insect);
+        
+        //Empty input area
+        
+
+        var movie = $(this).attr("data-name");
+        console.log(movie);
 
         // Constructing a URL to search Giphy for the name of the insect
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + insect + "&api_key=EszsuuswazSR3Ju6qajA3q6Ro9AV9C0p&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + movie + "&api_key=EszsuuswazSR3Ju6qajA3q6Ro9AV9C0p&limit=10";
 
         // Performing our AJAX GET request
         $.ajax({

@@ -1,5 +1,5 @@
 body {
-    background-image: url(https://media.istockphoto.com/vectors/cartoon-small-insect-with-nature-background-vector-id636842942?k=6&m=636842942&s=612x612&w=0&h=cblTWJsIP6ZfJz8JO1bwNkX08PEo2QWJGjcOTFAXSRw=);
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzzBuCLAr0G1NLmcGMjJzQ-Y15PqJJNxwUnmF1S-CDH0lkcI4I7g);
     background-repeat: no-repeat;
     background-size: 100%;  
             
@@ -8,6 +8,7 @@ body {
 #header-row {
     height: 100px;
     text-align: center;
+    color: white;
 }
 
 #headerRow {
