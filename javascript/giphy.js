@@ -39,7 +39,7 @@ $(document).ready(function () {
 
     //Create a button click function to display 10 non-animated gifs and place them on the page
     $("button").on("click", function () {
-
+        imageArea.empty();
         // "this" keyword refers to the button that was clicked
         var insect = $(this).attr("data-name");
         console.log(insect);
@@ -53,13 +53,17 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             console.log(queryURL);
+
             //Display response on the page
             var result = response.data;
-            for (var i=0; i< result.length; i++){
-            var img = $("<img>");
-            var imgUrl = result[i].images.downsized_still;
-            img.attr("src", imgUrl);
-            $("#image-area").append(img);
+            console.log(result);
+
+            for (var i = 0; i < result.length; i++) {
+                var img = $("<img>");
+                var imgUrl = result[i].images.fixed_height_still.url;
+                console.log(imgUrl);
+                img.attr("src", imgUrl);
+                imageArea.append(img);
             }
 
         });
