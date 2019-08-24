@@ -24,8 +24,6 @@ $(document).ready(function () {
 
     })
 
-
-
     //Create function to display the array of buttons on the page
     function createBtns() {
 
@@ -42,7 +40,7 @@ $(document).ready(function () {
     //Create a button click function to display 10 non-animated gifs and place them on the page
     $("button").on("click", function () {
 
-        // In this case, the "this" keyword refers to the button that was clicked
+        // "this" keyword refers to the button that was clicked
         var insect = $(this).attr("data-name");
         console.log(insect);
 
@@ -55,9 +53,16 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             console.log(queryURL);
-
             //Display response on the page
-        })
+            var result = response.data;
+            for (var i=0; i< result.length; i++){
+            var img = $("<img>");
+            var imgUrl = result[i].images.downsized_still;
+            img.attr("src", imgUrl);
+            $("#image-area").append(img);
+            }
+
+        });
 
     })
     //Create click function to animate the gif when the image is clicked
