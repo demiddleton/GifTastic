@@ -62,7 +62,7 @@ $(document).ready(function () {
 
             for (var i = 0; i < result.length; i++) {
                 var img = $("<img>");
-                var imgUrl = result[i].images.fixed_height_still.url;
+                var imgUrl = result[i].images.original_still.url;
                 console.log(imgUrl);
                 img.attr("src", imgUrl);
                 imageArea.append(img);
@@ -72,6 +72,6 @@ $(document).ready(function () {
 
     })
     //Create click function to animate the gif when the image is clicked
-
+    
 
 })

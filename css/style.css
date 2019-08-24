@@ -22,4 +22,11 @@ body {
 label {
     font-size: 20px;
     font-weight: bold;
+    color: white;
+}
+
+img {
+    height: 175px;
+    width: 175px;
+    margin: 10px;
 }
