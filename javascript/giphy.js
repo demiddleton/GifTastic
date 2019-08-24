@@ -12,19 +12,21 @@ $(document).ready(function () {
     submit.on("click", function (event) {
 
         event.preventDefault();
+
         btnArea.empty();
 
-        inputValue = document.getElementById('input').value;
+        inputValue = input.val().trim();
         topics.push(inputValue);
         console.log(topics);
 
         //Create button for new input value
-        createBtns(inputValue);
+        createBtns();
 
     })
 
     //Create function to display the array of buttons on the page
     function createBtns() {
+        btnArea.empty();
 
         for (var i = 0; i < topics.length; i++) {
             var button = $("<button>").text(topics[i]);
@@ -39,9 +41,7 @@ $(document).ready(function () {
     //Create a button click function to display 10 non-animated gifs and place them on the page
     $("button").on("click", function () {
         imageArea.empty();
-        
-        //Empty input area
-        
+
 
         var movie = $(this).attr("data-name");
         console.log(movie);
@@ -62,16 +62,32 @@ $(document).ready(function () {
 
             for (var i = 0; i < result.length; i++) {
                 var img = $("<img>");
-                var imgUrl = result[i].images.original_still.url;
-                console.log(imgUrl);
-                img.attr("src", imgUrl);
+                var stillImg = result[i].images.original_still.url;
+                console.log(stillImg);
+                img.attr("src", stillImg);
+                img.addClass("gif");
+
                 imageArea.append(img);
+
+                var activeImg = result[i].images.original.url;
+                console.log(activeImg);
+
+                var rating = result[i].rating;
+                console.log(rating);
+
+
             }
 
         });
 
+        //Create function to display animated gif when the image is clicked
+        $(".gif").on("click", function () {
+
+
+        });
     })
-    //Create click function to animate the gif when the image is clicked
-    
+
+
+
 
 })
