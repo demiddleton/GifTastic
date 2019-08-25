@@ -62,14 +62,18 @@ $(document).ready(function () {
 
             for (var i = 0; i < result.length; i++) {
                 var img = $("<img>");
+                var activeImg = result[i].images.original.url;
                 var stillImg = result[i].images.original_still.url;
                 console.log(stillImg);
                 img.attr("src", stillImg);
+                img.attr("data-still", stillImg);
+                img.attr("data-animate", activeImg);
+                img.attr("data-state", "still")
                 img.addClass("gif");
 
                 imageArea.append(img);
 
-                var activeImg = result[i].images.original.url;
+               
                 console.log(activeImg);
 
                 var rating = result[i].rating;
