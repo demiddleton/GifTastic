@@ -62,9 +62,12 @@ $(document).ready(function () {
 
             for (var i = 0; i < result.length; i++) {
                 var img = $("<img>");
-                var activeImg = result[i].images.original.url;
                 var stillImg = result[i].images.original_still.url;
                 console.log(stillImg);
+
+                var activeImg = result[i].images.original.url;
+                console.log(activeImg);
+
                 img.attr("src", stillImg);
                 img.attr("data-still", stillImg);
                 img.attr("data-animate", activeImg);
@@ -73,25 +76,23 @@ $(document).ready(function () {
 
                 imageArea.append(img);
 
-               
-                console.log(activeImg);
-
                 var rating = result[i].rating;
                 console.log(rating);
 
-
             }
 
-        });
+            $(".gif").on("click", function () {
+                var state = $(this).attr("data-state");
 
-        //Create function to display animated gif when the image is clicked
-        $(".gif").on("click", function () {
+                if (state === "still") {
+                    $(this).attr("src", $(this).attr("data-animate"));
+                    $(this).attr("data-state", "animate");
+                } else {
+                    $(this).attr("src", $(this).attr("data-still"));
+                    $(this).attr("data-state", "still");
+                }
 
-
+            });
         });
     })
-
-
-
-
 })
