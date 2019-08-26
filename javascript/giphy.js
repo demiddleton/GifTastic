@@ -12,7 +12,6 @@ $(document).ready(function () {
     submit.on("click", function (event) {
 
         event.preventDefault();
-
         btnArea.empty();
 
         inputValue = input.val().trim();
@@ -21,7 +20,7 @@ $(document).ready(function () {
 
         //Create button for new input value
         createBtns();
-
+     
     })
 
     //Create function to display the array of buttons on the page
@@ -78,6 +77,10 @@ $(document).ready(function () {
 
                 var rating = result[i].rating;
                 console.log(rating);
+
+                var p = $("<p>");
+                imageArea.append(p);
+                p.text(rating);
 
             }
 
