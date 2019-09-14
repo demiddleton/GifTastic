@@ -78,9 +78,9 @@ $(document).ready(function () {
                 var rating = result[i].rating;
                 console.log(rating);
 
-                var p = $("<p>");
-                imageArea.append(p);
-                p.text(rating);
+                var newDiv = $("<div>");
+                imageArea.append(newDiv);
+                newDiv.text(rating);
 
             }
 
